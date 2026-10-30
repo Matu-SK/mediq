@@ -54,9 +54,7 @@
       font-size: 13px;
       outline: none;
     }
-    input:focus {
-      border-color: #14b8a6;
-    }
+    input:focus { border-color: #14b8a6; }
     button {
       background: linear-gradient(135deg, #0ea5e9, #10b981);
       color: #fff;
@@ -68,15 +66,11 @@
       font-size: 14px;
       transition: filter 0.2s;
     }
-    button:hover {
-      filter: brightness(1.1);
-    }
+    button:hover { filter: brightness(1.1); }
     .hidden { display: none; }
   </style>
 </head>
 <body>
-
-  <!-- Nastavovací dialóg, ak odkaz nie je zadaný -->
   <div id="setupModal" class="setup-card hidden">
     <h2 style="margin: 0 0 8px 0; font-size: 20px;">AuraStudy — Prepojenie</h2>
     <p style="font-size: 12px; color: #94a3b8; margin: 0; line-height: 1.5;">
@@ -92,11 +86,9 @@
     const STORAGE_KEY = 'aurastudy_gas_url_v1';
 
     function init() {
-      // 1. Skontrolujeme parameter v URL (?url=...)
       const urlParams = new URLSearchParams(window.location.search);
       let targetUrl = urlParams.get('url');
 
-      // 2. Ak nie je v URL, pozrieme do pamäte zariadenia
       if (!targetUrl) {
         targetUrl = localStorage.getItem(STORAGE_KEY);
       }
